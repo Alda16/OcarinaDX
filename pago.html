@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela de Pago | Ecos de la Leyenda</title>
+    <link rel="stylesheet" href="pago-style.css">
+</head>
+<body class="checkout-page">
+
+    <div class="checkout-container">
+        <div class="order-summary">
+            <h3>📜 Resumen del Tributo</h3>
+            <div class="item-detail">
+                <p>Edición Gran Héroe</p>
+                <span>$34.99 MXN</span>
+            </div>
+            <hr>
+            <div class="total">
+                <p>Total a pagar:</p>
+                <span>$34.99 MXN</span>
+            </div>
+            <p class="disclaimer">Al confirmar, desbloquearás el acceso inmediato a los archivos del reino.</p>
+        </div>
+
+        <div class="payment-form-container">
+            <h2>Cámara del Tesoro</h2>
+            <p>Introduce los datos de tu pergamino bancario</p>
+            
+            <form id="payment-gate" onsubmit="procesarTransaccion(event)">
+                <div class="input-box">
+                    <label>Nombre del Titular</label>
+                    <input type="text" placeholder="Ingresa tu nombre completo" required>
+                </div>
+                
+                <div class="input-box">
+                    <label>Número de Tarjeta</label>
+                    <input type="text" placeholder="xxxx xxxx xxxx xxxx" maxlength="16" required>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-box">
+                        <label>Vencimiento</label>
+                        <input type="text" placeholder="MM/AA" maxlength="5" required>
+                    </div>
+                    <div class="input-box">
+                        <label>CVV</label>
+                        <input type="password" placeholder="***" maxlength="3" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-confirm">CONFIRMAR PAGO</button>
+                <button type="button" class="btn-cancel" onclick="location.href='index.html'">ABANDONAR</button>
+            </form>
+
+            <div id="processing" class="status-overlay" style="display:none;">
+                <div class="spinner"></div>
+                <p>Validando tributo...</p>
+            </div>
+
+            <div id="success" class="status-overlay" style="display:none;">
+                <div class="success-icon">✨</div>
+                <h3>¡Acceso Concedido!</h3>
+                <p>Tu descarga está lista.</p>
+                <a href="Juego.pdf" class="btn-download" download>💾 DESCARGAR JUEGO</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function procesarTransaccion(event) {
+            event.preventDefault();
+            document.getElementById('payment-gate').style.opacity = '0.1';
+            document.getElementById('processing').style.display = 'flex';
+
+            setTimeout(() => {
+                document.getElementById('processing').style.display = 'none';
+                document.getElementById('success').style.display = 'flex';
+                console.log("Transacción finalizada: Archivos liberados.");
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

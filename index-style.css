@@ -1,0 +1,511 @@
+:root {
+    --verde-bosque: #1b3022;
+    --dorado-viejo: #c5a059;
+    --piedra: #4a4a4a;
+    --pergamino: #f4e4bc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Georgia', serif; /* Toque medieval clásico */
+    background-color: var(--verde-bosque);
+    color: var(--pergamino);
+}
+
+/* Hero con efecto de naturaleza */
+.hero {
+    height: 80vh;
+    background: url('fondo-bosque.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 5px solid var(--dorado-viejo);
+}
+
+.hero-overlay {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.game-title {
+    font-size: 4rem;
+    color: var(--dorado-viejo);
+    text-shadow: 3px 3px 0px #000;
+    margin: 0;
+}
+
+/* Botón estilo zelda */
+.btn-medieval {
+    background-color: var(--dorado-viejo);
+    color: #fff;
+    border: 2px solid #8b6d31;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 #8b6d31;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-medieval:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #8b6d31;
+    filter: brightness(1.1);
+}
+
+.bestiary {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, #1b3022, #0d1a12);
+}
+
+.bestiary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.monster-card {
+    background: var(--pergamino);
+    color: #333;
+    padding: 1.5rem;
+    border: 3px solid var(--dorado-viejo);
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+}
+
+.pixel-art {
+    image-rendering: pixelated; 
+    width: 100px;
+    height: auto;
+}
+
+
+/* Estilo para el menú desplegable */
+.stats-menu {
+    margin-top: 15px;
+    border-top: 1px solid #8b6d31;
+    padding-top: 10px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.stats-menu summary {
+    font-weight: bold;
+    color: #8b6d31;
+    outline: none;
+    list-style: none; 
+}
+
+.stats-menu summary::before {
+    content: "📜 "; /* Icono estilo medieval */
+}
+
+.stats-content {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    border-left: 3px solid #c5a059;
+}
+
+.stats-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stats-content li {
+    margin-bottom: 5px;
+}
+
+code {
+    background: #e0d0b0;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+
+/* Estilos del Menú de Navegación */
+.main-nav {
+    background-color: rgba(27, 48, 34, 0.9); /* Verde bosque con transparencia */
+    backdrop-filter: blur(10px); /* Efecto HyperOS */
+    border-bottom: 3px solid var(--dorado-viejo);
+    position: sticky; /* Se queda arriba al bajar */
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    color: var(--dorado-viejo);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--pergamino);
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.nav-menu a:hover {
+    color: var(--dorado-viejo);
+}
+
+/* Botón especial para la Demo dentro del menú */
+.nav-demo-btn {
+    background: var(--dorado-viejo);
+    color: #fff !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 #8b6d31;
+}
+
+.nav-demo-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 0 #8b6d31;
+}
+
+
+
+/* NO OFICIAL */
+.shop-section {
+    padding: 60px 20px;
+    background: url('textura-piedra-oscura.png'); /* O un color sólido oscuro */
+    text-align: center;
+}
+
+.shop-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.shop-card {
+    background: var(--pergamino);
+    color: #333;
+    padding: 30px;
+    border: 4px solid var(--piedra);
+    border-radius: 15px;
+    width: 300px;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.shop-card.featured {
+    border-color: var(--dorado-viejo);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+}
+
+.card-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--verde-bosque);
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #8b6d31;
+    margin-bottom: 20px;
+}
+
+.features {
+    list-style: "🛡️ ";
+    text-align: left;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.btn-buy {
+    background: var(--verde-bosque);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-buy:hover {
+    background: #2d5038;
+}
+
+/* Cinta de "Recomendado" */
+.ribbon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--dorado-viejo);
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transform: rotate(10deg);
+}
+
+/* Caja de descarga */
+.download-box {
+    margin-top: 50px;
+    background: rgba(197, 160, 89, 0.2);
+    border: 2px dashed var(--dorado-viejo);
+    padding: 30px;
+    border-radius: 15px;
+    animation: fadeIn 1s;
+}
+
+
+
+/*  */
+/* Sección de la Leyenda */
+.legend-section {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #0d1a12, #1b3022);
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-container {
+    background-color: var(--pergamino);
+    background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 0); /* Sutil textura */
+    background-size: 20px 20px;
+    max-width: 800px;
+    padding: 50px;
+    border: 20px solid transparent;
+    /* Efecto de borde de papel quemado/desgastado */
+    border-image: url('https://www.transparenttextures.com/patterns/dark-leather.png') 30 round;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8), inset 0 0 100px rgba(139, 109, 49, 0.2);
+    position: relative;
+    border-radius: 5px;
+}
+
+.legend-title {
+    font-family: 'Cinzel', serif; /* Si puedes usar Google Fonts, esta queda genial */
+    font-size: 2.8rem;
+    color: var(--verde-bosque);
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--dorado-viejo);
+    padding-bottom: 10px;
+}
+
+.story-block {
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #2c2c2c;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.story-block h3 {
+    color: #8b6d31;
+    margin-bottom: 10px;
+}
+
+.story-divider {
+    text-align: center;
+    font-size: 2rem;
+    margin: 40px 0;
+    opacity: 0.5;
+}
+
+.story-block.quote {
+    font-style: italic;
+    text-align: center;
+    background: rgba(0,0,0,0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--dorado-viejo);
+}
+
+
+/*  */
+/* Estilos de Soporte */
+.support-section {
+    padding: 80px 20px;
+    background: #0d1a12;
+}
+
+.support-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* Caja de FAQ */
+.faq-box h3, .ticket-box h3 {
+    color: var(--dorado-viejo);
+    margin-bottom: 20px;
+}
+
+.faq-box details {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--piedra);
+}
+
+.faq-box summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--pergamino);
+}
+
+.faq-box p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Caja de Formulario (Ticket) */
+.ticket-box {
+    background: var(--pergamino);
+    padding: 30px;
+    border-radius: 12px;
+    border: 3px solid var(--dorado-viejo);
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--piedra);
+    border-radius: 5px;
+    background: #fff;
+    font-family: inherit;
+}
+
+/* Alerta de éxito */
+.success-alert {
+    margin-top: 20px;
+    padding: 15px;
+    background: #2d5038;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+/* --- RESPONSIVIDAD Y MENÚ MÓVIL --- */
+
+/* Ocultar botón por defecto */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--dorado-viejo);
+    transition: 0.3s;
+}
+
+/* Media Query para Tablets y Celulares */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Mostrar botón hamburguesa */
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(27, 48, 34, 0.98);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+        clip-path: circle(0% at 50% 0); /* Menú oculto circular */
+        transition: clip-path 0.5s ease-in-out;
+    }
+
+    /* Clase que se activa con JS */
+    .nav-menu.active {
+        clip-path: circle(150% at 50% 0);
+    }
+
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    /* Ajuste de secciones para movil */
+    .game-title {
+        font-size: 2.5rem;
+    }
+
+    .bestiary-grid {
+        grid-template-columns: 1fr; /* Una columna en movil */
+    }
+
+    .scroll-container {
+        padding: 20px;
+        border-width: 10px;
+    }
+
+    .shop-card.featured {
+        transform: scale(1); /* Quita el aumento de tamaño en movil para evitar errores visuales */
+    }
+}
+
+
+
+
+

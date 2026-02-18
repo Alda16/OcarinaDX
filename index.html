@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecos de la Leyenda | Proyecto Académico</title>
+    <link rel="stylesheet" href="index-style.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+    <div class="nav-container">
+        <div class="nav-logo">Bienvenidos</div>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        
+        <ul class="nav-menu">
+            <li><a href="#tienda">Obtener Juego</a></li>
+            
+            <li><a href="#historia">La Leyenda</a></li>
+            
+            <li><a href="#soporte">Soporte</a></li>
+            
+            <li><a href="Demo.html" class="nav-demo-btn">Jugar Demo</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1 class="game-title">Ecos de la Leyenda</h1>
+            <p class="tagline">Una aventura forjada en Godot</p>
+            <a href="#tienda" class="btn-medieval">Explorar el Reino</a>
+        </div>
+    </header>
+
+    <section class="bestiary">
+        <h2 class="section-title">Bestiario del Bosque</h2>
+        <div class="bestiary-grid">
+            
+            <div class="monster-card">
+                <div class="sprite-container">
+                    <img src="/assets/mago_1.png" alt="Mago" class="pixel-art">
+                </div>
+                <h3>Guardián de Musgo</h3>
+                <p>Un antiguo mago que protege las ruinas.</p>
+                
+                <details class="stats-menu">
+                    <summary>Ver Atributos Técnicos</summary>
+                    <div class="stats-content">
+                        <ul>
+                            <li><strong>Tipo:</strong> Mágico / Élite</li>
+                            <li><strong>IA:</strong> Máquina de estados (FSM) - Rango</li>
+                            <li><strong>Debilidad:</strong> Ataques físicos</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="monster-card">
+                <div class="sprite-container">
+                    <img src="/assets/esqueleto.png" alt="Esqueleto" class="pixel-art">
+                </div>
+                <h3>Esqueleto</h3>
+                <p>Un hueso duro de roer.</p>
+                <details class="stats-menu">
+                    <summary>Ver Atributos Técnicos</summary>
+                    <div class="stats-content">
+                        <ul>
+                            <li><strong>Tipo:</strong> No-muerto</li>
+                            <li><strong>IA:</strong> Persecución básica (Pathfinding 2D)</li>
+                            <li><strong>Sonido:</strong>(Huesos)</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="monster-card">
+                <div class="sprite-container">
+                    <img src="/assets/centaleon_abajo1.png" alt="Guardián" class="pixel-art">
+                </div>
+                <h3>Guardián del mamitas puebla</h3>
+                <p>Protege las obras sagradas con una fuerza descomunal.</p>
+                <details class="stats-menu">
+                    <summary>Ver Atributos Técnicos</summary>
+                    <div class="stats-content">
+                        <ul>
+                            <li><strong>Tipo:</strong> Jefe de zona</li>
+                            <li><strong>Mecánica:</strong> Patrones de ataque circulares</li>
+                            <li><strong>Colisión:</strong> KinematicBody2D optimizado</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="monster-card">
+                <div class="sprite-container">
+                    <img src="/assets/conejo.png" alt="Conejo" class="pixel-art">
+                </div>
+                <h3>Conejo</h3>
+                <p>Enemigo basico le encantan las zanahorias.</p>
+                <details class="stats-menu">
+                    <summary>Ver Atributos Técnicos</summary>
+                    <div class="stats-content">
+                        <ul>
+                            <li><strong>Tipo:</strong> Guerrero común</li>
+                            <li><strong>IA:</strong> Comportamiento de solitario</li>
+                            <li><strong>Animación:</strong> AnimatedSprite2D (8 frames)</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="monster-card">
+                <div class="sprite-container">
+                    <img src="/assets/murcielago.png" alt="Murciélago" class="pixel-art">
+                </div>
+                <h3>Murciélago</h3>
+                <p>Es bataman y combate al crimen.</p>
+                <details class="stats-menu">
+                    <summary>Ver Atributos Técnicos</summary>
+                    <div class="stats-content">
+                        <ul>
+                            <li><strong>Tipo:</strong> Volador / Ambiental</li>
+                            <li><strong>IA:</strong> Movimiento aleatorio (Wander)</li>
+                            <li><strong>Física:</strong> Ignora gravedad del mundo</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="monster-card">
+                <div class="sprite-container">
+                    <img src="/assets/slime.png" alt="Slime" class="pixel-art">
+                </div>
+                <h3>Slime</h3>
+                <p>Es un slime... que quieres que te diga?, mostro</p>
+                <details class="stats-menu">
+                    <summary>Ver Atributos Técnicos</summary>
+                    <div class="stats-content">
+                        <ul>
+                            <li><strong>Tipo:</strong> Elemental / Básico</li>
+                            <li><strong>Mecánica:</strong> División al morir (Spawn child)</li>
+                            <li><strong>Shader:</strong> Efecto de rebote Squash & Stretch</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- NO OFICIAL -->
+     <section id="tienda" class="shop-section">
+    <h2 class="section-title">Adquirir la Leyenda</h2>
+    
+    <div class="shop-container">
+        <div class="shop-card">
+            <div class="card-header">Edición Estándar</div>
+            <div class="price">$19.99 MXN</div>
+            <ul class="features">
+                <li>Juego Base Completo</li>
+                <li>Acceso a la Demo Alpha</li>
+                <li>Manual Digital (PDF)</li>
+            </ul>
+            <button class="btn-buy" onclick="location.href='pago.html'">Comprar Ahora</button>
+        </div>
+
+        <div class="shop-card featured">
+            <div class="ribbon">Recomendado</div>
+            <div class="card-header">Edición Gran Héroe</div>
+            <div class="price">$34.99 MXN</div>
+            <ul class="features">
+                <li>Todo lo de la Estándar</li>
+                <li>Artbook Digital de Sprites</li>
+                <li>Banda Sonora Original</li>
+                <li>Skin Exclusiva "Túnica de Musgo"</li>
+            </ul>
+            <button class="btn-buy" onclick="location.href='pago.html'">Comprar Ahora</button>
+        </div>
+    </div>
+
+    <div id="download-area" class="download-box" style="display: none;">
+        <h3>¡Pago Confirmado, Guerrero!</h3>
+        <p>Tu llave al reino ha sido forjada.</p>
+        <a href="archivos/EcosDeLaLeyenda.zip" class="btn-medieval">Descargar Juego (.ZIP)</a>
+    </div>
+</section>
+
+
+<!--  -->
+<section id="historia" class="legend-section">
+    <div class="scroll-container">
+        <div class="scroll-content">
+            <h2 class="legend-title">La Profecía de los Ecos</h2>
+            
+            <div class="story-block">
+                <h3>El Despertar</h3>
+                <p>Hace eones, el Reino de Musgo florecía bajo la luz de la Gran Semilla. Pero algo cambió. Un susurro oscuro nacido de las profundidades de las ruinas empezó a corromper las raíces, transformando la naturaleza en una pesadilla viviente.</p>
+            </div>
+
+            <div class="story-divider">PENE</div>
+
+            <div class="story-block">
+                <h3>La Sombra del Héroe</h3>
+                <p>Tú no eres el primer guerrero en intentar entrar al bosque, pero quizás seas el último. Equipado con nada más que tu valor y los ecos de quienes fallaron antes, deberás descifrar los acertijos de piedra y enfrentar a guardianes que olvidaron su propósito hace siglos.</p>
+            </div>
+
+            <div class="story-block quote">
+                <p>"En el silencio del bosque, los ecos son lo único que te mantiene cuerdo... o lo que te llevará a la perdición."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--  -->
+<section id="soporte" class="support-section">
+    <h2 class="section-title">Centro de Soporte del Gremio</h2>
+    
+    <div class="support-container">
+        <div class="faq-box">
+            <h3>Consultas Comunes</h3>
+            <details>
+                <summary>¿El juego funciona en Windows 7?</summary>
+                <p>Se recomienda Windows 10 o superior, aunque el ejecutable de Godot es compatible con sistemas de 64 bits más antiguos.</p>
+            </details>
+            <details>
+                <summary>¿Mi progreso se guarda automáticamente?</summary>
+                <p>Sí, el juego utiliza un sistema de guardado por <code>JSON</code> en la carpeta de usuario cada vez que descansas en una estatua.</p>
+            </details>
+            <details>
+                <summary>El juego corre lento, ¿qué hago?</summary>
+                <p>Asegúrate de tener actualizados los drivers de tu GPU y que Docker no esté consumiendo demasiados recursos en segundo plano.</p>
+            </details>
+        </div>
+
+        <div class="ticket-box">
+            <h3>Enviar un Cuervo (Reporte)</h3>
+            <form id="supportForm" onsubmit="enviarReporte(event)">
+                <div class="input-group">
+                    <label>Nombre del Guerrero:</label>
+                    <input type="text" id="nombre" required placeholder="Tu nombre...">
+                </div>
+                <div class="input-group">
+                    <label>Tipo de Problema:</label>
+                    <select id="categoria">
+                        <option value="bug">Error en el juego (Bug)</option>
+                        <option value="pago">Problema con la Compra</option>
+                        <option value="tecnico">Error de Instalación / Docker</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Descripción del Hechizo Fallido:</label>
+                    <textarea id="mensaje" rows="4" required placeholder="Describe qué pasó..."></textarea>
+                </div>
+                <button type="submit" class="btn-medieval">Enviar Reporte</button>
+            </form>
+            <div id="successMessage" style="display:none;" class="success-alert">
+                📜 ¡El cuervo ha partido! Recibirás respuesta pronto.
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Cerrar el menú al hacer clic en un enlace de las secciones 
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
+
+</body>
+</html>

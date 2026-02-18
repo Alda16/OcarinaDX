@@ -1,0 +1,143 @@
+/* Paleta estilo medieval */
+:root {
+    --verde-oscuro: #0d1a12;
+    --verde-bosque: #1b3022;
+    --dorado: #c5a059;
+    --pergamino: #f4e4bc;
+    --piedra: #4a4a4a;
+    --sombra: rgba(0, 0, 0, 0.7);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--verde-oscuro);
+    color: var(--pergamino);
+    font-family: 'Georgia', serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Evita scrolls accidentales */
+}
+
+/* Header estilo zelda */
+.demo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: var(--verde-bosque);
+    border-bottom: 4px solid var(--dorado);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.demo-title {
+    font-size: 1.4rem;
+    color: var(--dorado);
+    margin: 0;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.btn-volver {
+    color: var(--pergamino);
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--dorado);
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: 0.3s;
+    background: rgba(0,0,0,0.3);
+}
+
+.btn-volver:hover {
+    background: var(--dorado);
+    color: var(--verde-oscuro);
+    transform: scale(1.05);
+}
+
+/* Área del Juego Responsiva */
+.game-container {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Visualizacion de la demo (Mantiene proporción 16:9) */
+.frame-magic {
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para no pixelar */
+    max-height: 65vh;  /* Altura máxima para que siempre quepa el footer (no mover pls)*/
+    aspect-ratio: 16 / 9; /* Proporción nativa de Godot */
+    background: #000;
+    border: 8px solid var(--piedra);
+    border-radius: 12px;
+    box-shadow: 0 0 50px var(--sombra);
+    position: relative;
+    overflow: hidden;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Footer de controles */
+.demo-controls {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+    background: linear-gradient(to top, #000, var(--verde-oscuro));
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.control-card {
+    text-align: center;
+    min-width: 100px;
+}
+
+.key {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: var(--dorado);
+    background: #1a1a1a;
+    padding: 5px 12px;
+    border: 1px solid var(--dorado);
+    border-radius: 6px;
+    box-shadow: 0 3px 0 var(--dorado);
+    margin-bottom: 8px;
+}
+
+.control-card p {
+    margin: 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--pergamino);
+}
+
+
+/* POSIBLE EXPANSION A CELULARES (No Oficial) */
+/* Ajustes para Celulares o Pantallas Pequeñas */
+@media (max-width: 768px) {
+    .frame-magic {
+        max-height: 50vh; 
+        border-width: 4px;
+    }
+    .demo-title, .version-tag {
+        display: none; 
+    }
+    .demo-controls {
+        gap: 10px;
+    }
+}
