@@ -24,6 +24,9 @@ jobs:
     deploy:
         needs: build-and-test
         runs-on: ubuntu-latest
+        permissions:
+            contents: write
+
         steps:
             - name: checkout Code
               uses: actions/checkout@v4
