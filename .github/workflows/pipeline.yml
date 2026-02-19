@@ -11,10 +11,13 @@ jobs:
         - name: Checkout Code
           uses: actions/checkout@v4
 
-        - name: Validar HTML
-          uses: cygnetdigital/html5validator-action@v1
+        - name: Instalar Node.js
+          uses: actions/setup-node@v4
           with:
-            root: .
+            node-version: '20'
+
+        - name: Validar HTML
+          run: npx htmlhint index.html
 
         - name: Busqueda de links rotos
           uses: JustinBeckwith/linkinator-action@v1
@@ -34,5 +37,5 @@ jobs:
             - name: deploy Github Pages
               uses: peaceiris/actions-gh-pages@v3
               with:
-                github-token: ${{ secrets.GITHUB_TOKEN }}
+                github_token: ${{ secrets.GITHUB_TOKEN }}
                 publish-dir: ./
