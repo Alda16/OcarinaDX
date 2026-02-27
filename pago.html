@@ -30,7 +30,7 @@
             <form id="payment-gate" onsubmit="procesarTransaccion(event)">
                 <div class="input-box">
                     <label>Nombre del Titular</label>
-                    <input type="text" placeholder="Ingresa tu nombre completo" required>
+                    <input type="text" id="nombreTitular" placeholder="Ingresa tu nombre completo registrado" required>
                 </div>
                 
                 <div class="input-box">
@@ -55,13 +55,13 @@
 
             <div id="processing" class="status-overlay" style="display:none;">
                 <div class="spinner"></div>
-                <p>Validando tributo...</p>
+                <p>Validando tributo con los Antiguos...</p>
             </div>
 
             <div id="success" class="status-overlay" style="display:none;">
                 <div class="success-icon">✨</div>
                 <h3>¡Acceso Concedido!</h3>
-                <p>Tu descarga está lista.</p>
+                <p>Tu identidad ha sido verificada en el reino.</p>
                 <a href="ZELDA_OOT_DEMAKE01.exe" class="btn-download" download>💾 DESCARGAR JUEGO</a>
             </div>
         </div>
@@ -70,14 +70,33 @@
     <script>
         function procesarTransaccion(event) {
             event.preventDefault();
+
+            // 1. Obtener el nombre registrado (del formulario de soporte o registro previo)
+            // Si no existe, usamos un valor por defecto para que no truene, pero puedes cambiarlo
+            const nombreRegistrado = localStorage.getItem('usuarioNombre') || "";
+            
+            // 2. Obtener el nombre escrito en el formulario de pago
+            const nombreEnTarjeta = document.getElementById('nombreTitular').value.trim();
+
+            // 3. Efecto visual de carga
             document.getElementById('payment-gate').style.opacity = '0.1';
             document.getElementById('processing').style.display = 'flex';
 
             setTimeout(() => {
                 document.getElementById('processing').style.display = 'none';
-                document.getElementById('success').style.display = 'flex';
-                console.log("Transacción finalizada: Archivos liberados.");
-            }, 3000);
+
+                // 4. Lógica de validación
+                // Comparamos ignorando mayúsculas/minúsculas
+                if (nombreEnTarjeta.toLowerCase() === nombreRegistrado.toLowerCase() && nombreRegistrado !== "") {
+                    document.getElementById('success').style.display = 'flex';
+                    console.log("Validación exitosa: El Guerrero coincide.");
+                } else {
+                    // Si falla, restauramos el formulario y avisamos
+                    document.getElementById('payment-gate').style.opacity = '1';
+                    alert("❌ El nombre no coincide con el Guerrero registrado en el sistema. Intenta de nuevo.");
+                    console.log("Error: Nombre incorrecto.");
+                }
+            }, 2500); // 2.5 segundos de "espera" para darle realismo
         }
     </script>
 </body>

@@ -25,6 +25,8 @@
             <li><a href="#tienda">Obtener Juego</a></li>
             
             <li><a href="#historia">La Leyenda</a></li>
+
+            <li><a href="./forms.html">Registro</a></li>
             
             <li><a href="#soporte">Soporte</a></li>
             
@@ -174,7 +176,7 @@
                 <li>Acceso a la Demo Alpha</li>
                 <li>Manual Digital (PDF)</li>
             </ul>
-            <button class="btn-buy" onclick="location.href='pago.html'">Comprar Ahora</button>
+            <button class="btn-buy" onclick="verificarRegistro()">Comprar Ahora</button>
         </div>
 
         <div class="shop-card featured">
@@ -187,7 +189,7 @@
                 <li>Banda Sonora Original</li>
                 <li>Skin Exclusiva "Túnica de Musgo"</li>
             </ul>
-            <button class="btn-buy" onclick="location.href='pago.html'">Comprar Ahora</button>
+            <button class="btn-buy" onclick="verificarRegistro()">Comprar Ahora</button>
         </div>
     </div>
 </section>
@@ -204,7 +206,7 @@
                 <p>Hace eones, el Reino de Musgo florecía bajo la luz de la Gran Semilla. Pero algo cambió. Un susurro oscuro nacido de las profundidades de las ruinas empezó a corromper las raíces, transformando la naturaleza en una pesadilla viviente.</p>
             </div>
 
-            <div class="story-divider">PENE</div>
+            <div class="story-divider">Hola </div>
 
             <div class="story-block">
                 <h3>La Sombra del Héroe</h3>
@@ -282,6 +284,33 @@
             navMenu.classList.remove('active');
         });
     });
+
+window.onload = function() {
+    const nombreCompleto = localStorage.getItem('usuarioNombre');
+    
+    if (nombreCompleto) {
+        // .split(' ') divide "Juan Perez" en ["Juan", "Perez"]
+        // [0] toma el primer elemento de esa lista
+        const primerNombre = nombreCompleto.trim().split(' ')[0];
+        
+        document.querySelector('.nav-logo').innerText = "Bienvenido, " + primerNombre;
+    }
+}
+
+
+function verificarRegistro() {
+    // Intentamos obtener el nombre del usuario del localStorage
+    const usuarioRegistrado = localStorage.getItem('usuarioNombre');
+
+    if (usuarioRegistrado && usuarioRegistrado.trim() !== "") {
+        // Si hay datos, el usuario ya se registró. Lo enviamos a la pasarela.
+        window.location.href = 'pago.html';
+    } else {
+        // Si no hay datos, le avisamos y lo enviamos al formulario.
+        alert("🛡️ ¡Alto ahí, viajero! Primero debes registrar tu identidad en el gremio.");
+        window.location.href = 'forms.html';
+    }
+}
 </script>
 
 </body>

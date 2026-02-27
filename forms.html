@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Guerrero | Ecos de la Leyenda</title>
+    <link rel="stylesheet" href="index-style.css"> <style>
+        .registration-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo-bosque.jpg') center/cover;
+        }
+        .scroll-card {
+            background: var(--pergamino);
+            padding: 40px;
+            border: 15px solid transparent;
+            border-image: url('https://www.transparenttextures.com/patterns/dark-leather.png') 30 round;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            text-align: center;
+            max-width: 400px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-container">
+        <div class="scroll-card">
+            <h2 style="color: var(--verde-bosque); font-family: 'Cinzel', serif;">Inscripción al Gremio</h2>
+            <p>Escribe tu nombre para ser reconocido por los Antiguos y poder adquirir el juego.</p>
+            
+            <form id="form-registro" onsubmit="registrarGuerrero(event)">
+                <div class="input-group" style="margin: 20px 0;">
+                    <label style="display: block; font-weight: bold; margin-bottom: 10px;">Nombre del Guerrero:</label>
+                    <input type="text" id="nombreInput" required placeholder="Titular de la tarjeta..." 
+                           style="width: 100%; padding: 10px; border: 2px solid var(--dorado-viejo); border-radius: 5px;">
+                </div>
+                
+                <button type="submit" class="btn-medieval">FORJAR IDENTIDAD</button>
+                <button type="button" class="btn-cancel" onclick="location.href='index.html'">ABANDONAR</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function registrarGuerrero(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('nombreInput').value;
+            
+            // GUARDAMOS EL NOMBRE EN EL NAVEGADOR
+            localStorage.setItem('usuarioNombre', nombre);
+            
+            alert("📜 ¡Bienvenido, " + nombre + "! Tu nombre ha sido escrito en las crónicas.");
+            
+            // REDIRIGIR A LA TIENDA O AL INDEX
+            window.location.href = 'index.html#inicio';
+        }
+    </script>
+</body>
+</html>

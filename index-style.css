@@ -458,6 +458,11 @@ code {
     transition: 0.3s;
 }
 
+.btn-cancel {
+    background: transparent; color: #666; width: 100%; border: none;
+    margin-top: 10px; cursor: pointer; text-decoration: underline;
+}
+
 /* Media Query para Tablets y Celulares */
 @media (max-width: 768px) {
     .menu-toggle {
